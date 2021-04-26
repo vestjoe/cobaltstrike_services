@@ -1,0 +1,20 @@
+# listener.service
+[Unit]
+Description=Cobalt Strike aggressor service
+After=teamserver.service network.target
+Wants=teamserver.service
+StartLimitIntervalSec=33
+
+[Service]
+Restart=on-failure
+RestartSec=10
+WorkingDirectory=/opt/cobaltstrike
+ExecStartPre=/bin/sleep 60
+ExecStart=/bin/bash /opt/cobaltstrike/agscript 127.0.0.1 50050 <USER to LOGON TO COBALTSTRIKE> <TEAMSERVER PASSWORD> <PATH TO listener_service.cna>
+
+# Example
+# ExecStart=/bin/bash /opt/cobaltstrike/agscript 127.0.0.1 50050 listener_service thisismypassword /opt/cobaltstrike/listener_service.cna
+
+
+[Install]
+WantedBy=multi-user.target

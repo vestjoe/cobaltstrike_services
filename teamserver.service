@@ -1,0 +1,16 @@
+# teamserver.service
+[Unit]
+Description=Cobalt Strike Teamserver Service
+After=network.target
+Wants=network.target
+
+[Service]
+Type=Simple
+WorkingDirectory=/opt/cobaltstrike
+ExecStart=/opt/cobaltstrike/teamserver <TEAMSERVER IP> <PASSWORD> <PATH TO C2 PROFILE>
+
+# Example
+# ExecStart=/opt/cobaltstrike/teamserver `hostname -I` thisismypassword /opt/cobaltstrike/c2.profile
+
+[Install]
+WantedBy=multi-user.target
