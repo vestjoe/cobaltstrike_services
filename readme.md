@@ -15,7 +15,7 @@ These scripts have been tested on Ubuntu server, and will need to be adjusted ba
   - /etc/systemd/system/listener.service
   - /etc/cobaltstrike/listener_service.cna
 - Register the new services
-  - `systemclt daemon-reload`
+  - `systemctl daemon-reload`
 - Start the services
   - `systemctl start teamserver.service`
   - `systemctl start listener.service`
