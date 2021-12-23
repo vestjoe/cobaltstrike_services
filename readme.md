@@ -4,6 +4,11 @@ These scripts can be used as a template to set up teamserver as a service and au
 
 These scripts have been tested on Ubuntu server, and will need to be adjusted based on your use case.
 
+## Changelog
+
+- 23 Dec 2021 (CS 4.5 update)
+  - Added Max Retry Strategy to script
+
 ## Steps
 
 - Update the service files to match your environment.
