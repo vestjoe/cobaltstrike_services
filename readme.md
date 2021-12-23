@@ -1,4 +1,4 @@
-# Running Cobalstrike Teamserver as a Service
+# Running Cobalt Strike Teamserver as a Service
 
 These scripts can be used as a template to set up teamserver as a service and autostart listeners.
 
